@@ -9949,6 +9949,11 @@ export const maleClothes = {
         '0': [
             {
                 dlc: 0,
+                drawable: -1,
+                maxTextures: 1,
+            },
+            {
+                dlc: 0,
                 drawable: 1,
                 maxTextures: 1,
             },
@@ -10906,6 +10911,11 @@ export const maleClothes = {
         '1': [
             {
                 dlc: 0,
+                drawable: -1,
+                maxTextures: 1,
+            },
+            {
+                dlc: 0,
                 drawable: 1,
                 maxTextures: 8,
             },
@@ -11137,6 +11147,11 @@ export const maleClothes = {
         ],
         '2': [
             {
+                dlc: 0,
+                drawable: -1,
+                maxTextures: 1,
+            },
+            {
                 dlc: 2398078303,
                 drawable: 1,
                 maxTextures: 1,
@@ -11346,6 +11361,11 @@ export const maleClothes = {
         '4': [],
         '5': [],
         '6': [
+            {
+                dlc: 0,
+                drawable: -1,
+                maxTextures: 1,
+            },
             {
                 dlc: 0,
                 drawable: 1,
@@ -11578,6 +11598,11 @@ export const maleClothes = {
             },
         ],
         '7': [
+            {
+                dlc: 0,
+                drawable: -1,
+                maxTextures: 1,
+            },
             {
                 dlc: 2939825043,
                 drawable: 1,
@@ -22136,6 +22161,11 @@ export const femaleClothes = {
         '0': [
             {
                 dlc: 0,
+                drawable: -1,
+                maxTextures: 1,
+            },
+            {
+                dlc: 0,
                 drawable: 1,
                 maxTextures: 1,
             },
@@ -23068,6 +23098,11 @@ export const femaleClothes = {
         '1': [
             {
                 dlc: 0,
+                drawable: -1,
+                maxTextures: 1,
+            },
+            {
+                dlc: 0,
                 drawable: 1,
                 maxTextures: 11,
             },
@@ -23309,6 +23344,11 @@ export const femaleClothes = {
         ],
         '2': [
             {
+                dlc: 0,
+                drawable: -1,
+                maxTextures: 1,
+            },
+            {
                 dlc: 472368876,
                 drawable: 1,
                 maxTextures: 1,
@@ -23423,6 +23463,11 @@ export const femaleClothes = {
         '4': [],
         '5': [],
         '6': [
+            {
+                dlc: 0,
+                drawable: -1,
+                maxTextures: 1,
+            },
             {
                 dlc: 0,
                 drawable: 1,
@@ -23600,6 +23645,11 @@ export const femaleClothes = {
             },
         ],
         '7': [
+            {
+                dlc: 0,
+                drawable: -1,
+                maxTextures: 1,
+            },
             {
                 dlc: 1139983493,
                 drawable: 1,
