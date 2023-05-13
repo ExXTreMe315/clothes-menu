@@ -65,7 +65,7 @@ Like in my Meta it's ``mp_m_eup`` and ``mp_f_eup``
 - [Discord](https://discordapp.com/users/396472444388376577)
 
 - [GitHub](https://github.com/ExXTreMe315)
-- [GitHub Issues](https://github.com/ExXTreMe31)
+- [GitHub Issues](https://github.com/ExXTreMe31/clothes-menu/issues)
 
 ## Credits
 
