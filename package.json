@@ -1,0 +1,17 @@
+{
+  "name": "clothes_menu",
+  "version": "1.0.0",
+  "description": "Clothes Menu by ExXTreMe",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [
+    "clothes",
+    "altv",
+    "NativeUi"
+  ],
+  "author": "ExXTreMe",
+  "license": "ISC",
+  "type": "module"
+}
