@@ -5,7 +5,7 @@ Currently, this menu supports only Basegame cloth.
 
 ## Features
 
-- change clothes & porps
+- change cloth & porps
 
 ## Planed features
 - reimplement DLC support
@@ -18,12 +18,12 @@ Currently, this menu supports only Basegame cloth.
 - [E-Mail](mailto:exxtreme@richman-gaming.de?subject=AltV%20Cloth%20a%20Menu)
 
 - [GitHub](https://github.com/ExXTreMe315)
-- [GitHub Issues](https://github.com/ExXTreMe315/clothes-menu/issues)
+- [GitHub Issues](https://github.com/ExXTreMe315/cloth-menu/issues)
 
 ## Installation
 1. download the files from this repository or clone the repository:
    ```bash
-   git clone https://github.com/ExXTreMe315/clothes-menu.git
+   git clone https://github.com/ExXTreMe315/cloth-menu.git
    ```
 
 2. copy the folder to your AltV server directory under `resources/`.
@@ -32,7 +32,7 @@ Currently, this menu supports only Basegame cloth.
     ```text
       resources: [
          ...
-         clothes-menu,
+         cloth-menu,
          ...
       ]
     ```
