@@ -1,7 +1,6 @@
 /// <reference types="@altv/types-client" />
 import * as alt from 'alt-client';
 import * as NativeUI from './includes/NativeUI/NativeUi.js';
-import * as data from '../data.js';
 
 let cloth = {
     component: 0,
@@ -33,8 +32,12 @@ const clothMenuItems = {
 const clothMenu = new NativeUI.Menu("Clothes", "Clothes Menu", new NativeUI.Point(25, 25), "shopui_title_graphics_franklin", "shopui_title_graphics_franklin");
 const componentMenu = new NativeUI.Menu(capitalizeFirstLetter(clothMenuItems[cloth.component]), `${capitalizeFirstLetter(clothMenuItems[cloth.component])} Menu`, new NativeUI.Point(25, 25), "shopui_title_graphics_franklin", "shopui_title_graphics_franklin");
 
-componentMenu.AddItem(new NativeUI.UIMenuListItem("Drawable", "Set drawable", new NativeUI.ItemsCollection(createNumberArrayTill(255)), 1, { id: "drawable" }))
-componentMenu.AddItem(new NativeUI.UIMenuListItem("Texture", "Set texture", new NativeUI.ItemsCollection(createNumberArrayTill(255)), 1, { id: "texture" }))
+const drawableItem = new NativeUI.UIMenuListItem("Drawable", "Set drawable", new NativeUI.ItemsCollection(createNumberArrayTill(500)), 1, { id: "drawable" })
+componentMenu.AddItem(drawableItem)
+
+const textureItem = new NativeUI.UIMenuListItem("Texture", "Set texture", new NativeUI.ItemsCollection(createNumberArrayTill(26)), 1, { id: "texture" })
+componentMenu.AddItem(textureItem)
+
 componentMenu.AddItem(new NativeUI.UIMenuItem("Apply", "Apply Cloth", { id: "apply" }))
 
 for (const [key, value] of Object.entries(clothMenuItems)) {
@@ -52,10 +55,9 @@ componentMenu.ListChange.on((item, index) => {
 componentMenu.ItemSelect.on((item) => {
     alt.logDebug(item.Data)
     if(!item.Data || !item.Data.id) return
-    if(item.Data.id !== 'apply') return
     alt.logDebug(cloth)
-    if(cloth.component >= 13){
-        alt.emitServer('setProp', cloth.component-13, cloth.drawable, cloth.texture)
+    if(cloth.component >= 12){
+        alt.emitServer('setProp', cloth.component-12, cloth.drawable, cloth.texture)
     }
     alt.emitServer('setCloth', cloth.component, cloth.drawable, cloth.texture)
 })
@@ -64,6 +66,9 @@ clothMenu.ItemSelect.on((item) => {
     alt.logDebug(item.Data)
     if(!item.Data || !item.Data.componentID) return
     cloth.component = parseInt(item.Data.componentID)
+    componentMenu.Title = capitalizeFirstLetter(clothMenuItems[cloth.component])
+    componentMenu.SubTitle = `${capitalizeFirstLetter(clothMenuItems[cloth.component])} Menu`
+    drawableItem.Index = 0
 })
 
 function createNumberArrayTill(max) {
