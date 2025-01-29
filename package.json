@@ -1,17 +1,16 @@
 {
   "name": "clothes_menu",
-  "version": "1.0.0",
-  "description": "Clothes Menu by ExXTreMe",
-  "main": "index.js",
-  "scripts": {
-    "test": ""
+  "version": "2.0.0",
+  "author": {
+    "name": "ExXTreMe",
+    "email": "exxtreme@richman-gaming.de"
   },
+  "license": "MIT",
+  "description": "Clothes Menu by ExXTreMe",
   "keywords": [
     "clothes",
     "altv",
     "NativeUi"
   ],
-  "author": "ExXTreMe",
-  "license": "ISC",
   "type": "module"
 }
