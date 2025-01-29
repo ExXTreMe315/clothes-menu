@@ -1,16 +1,25 @@
 {
-  "name": "clothes_menu",
+  "name": "@exxtreme315/clothes-menu",
   "version": "2.0.0",
   "author": {
     "name": "ExXTreMe",
-    "email": "exxtreme@richman-gaming.de"
+    "email": "exxtreme@richman-gaming.de",
+    "url": "https://github.com/ExXTreMe315"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "description": "Clothes Menu by ExXTreMe",
   "keywords": [
     "clothes",
     "altv",
     "NativeUi"
   ],
-  "type": "module"
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ExXTreMe315/clothes-menu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ExXTreMe315/clothes-menu/issues"
+  },
+  "homepage": "https://github.com/ExXTreMe315/clothes-menu#readme"
 }
