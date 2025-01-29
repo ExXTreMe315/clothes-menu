@@ -1,5 +1,5 @@
 {
-  "name": "@exxtreme315/clothes-menu",
+  "name": "@exxtreme315/cloth-menu",
   "version": "2.0.0",
   "author": {
     "name": "ExXTreMe",
@@ -7,19 +7,19 @@
     "url": "https://github.com/ExXTreMe315"
   },
   "license": "Apache-2.0",
-  "description": "Clothes Menu by ExXTreMe",
+  "description": "Cloth Menu by ExXTreMe",
   "keywords": [
-    "clothes",
+    "cloth",
     "altv",
     "NativeUi"
   ],
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ExXTreMe315/clothes-menu.git"
+    "url": "git+https://github.com/ExXTreMe315/cloth-menu.git"
   },
   "bugs": {
-    "url": "https://github.com/ExXTreMe315/clothes-menu/issues"
+    "url": "https://github.com/ExXTreMe315/cloth-menu/issues"
   },
-  "homepage": "https://github.com/ExXTreMe315/clothes-menu#readme"
+  "homepage": "https://github.com/ExXTreMe315/cloth-menu#readme"
 }
