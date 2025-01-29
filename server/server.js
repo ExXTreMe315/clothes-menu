@@ -17,7 +17,7 @@ alt.onClient('setDlcCloth', (player, dlc, component, drawable, texture) => {
 
 alt.onClient('setProp', (player, component, drawable, texture) => {
     if(drawable === 0) {
-        player.clearProp(drawable)
+        player.clearProp(component)
         return
     }
     player.setProp(component, drawable, texture)
@@ -25,7 +25,7 @@ alt.onClient('setProp', (player, component, drawable, texture) => {
 
 alt.onClient('setDlcProp', (player, dlc, component, drawable, texture) => {
     if(drawable === 0) {
-        player.clearProp(drawable)
+        player.clearProp(component)
         return
     }
     player.setDlcProp(dlc, component, drawable, texture)
