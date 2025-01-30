@@ -35,7 +35,9 @@ export const config = {
 ## Get your DLC name
 If you don't know your DLC name you can take a look in your `.meta` files of the clothes pack at `<dlcName>`.
 
-Like in my Meta it's `mp_m_eup` and `mp_f_eup` so the `eup` is the name you need to add to the `config.js`
+As an example I am using the EUP pack from my [eup-altv](https://github.com/ExXTreMe315/eup-altv) repository.
+
+In my Meta it's `mp_m_eup` and `mp_f_eup` so the `eup` is the name you need to add to the `config.js`
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
