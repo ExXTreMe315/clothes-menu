@@ -1,7 +1,7 @@
 # Alt:V Native-UI Cloth Menu
 
 This resource contains a cloth menu made with NativeUI.
-Currently, this menu supports only Basegame cloth.
+Currently, this menu supports only BaseGame cloth.
 
 ## Features
 
@@ -9,6 +9,9 @@ Currently, this menu supports only Basegame cloth.
 
 ## Planed features
 - reimplement DLC support
+
+## Nice to know
+- Textures currently always go up to 26, as 26 is the highest possible texture. A recalculation and reassignment of the maximum ID is possible but destroys the UI when setting and is therefore not done.
 
 ## Usage
 - The default key is "K" and can be changed in the client.js at the bottom.
