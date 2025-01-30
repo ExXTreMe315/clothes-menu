@@ -48,9 +48,11 @@ clothMenu.ItemSelect.on((item) => {
 
     componentMenu.Clear()
 
+    let minDrawableID = 0
     let maxDrawableVariations = getMaxDrawableVariations(cloth.component)
     let maxTextureVariations = 26
     if(cloth.component >= 12) {
+        minDrawableID = -1
         maxDrawableVariations = getMaxPropDrawableVariations(cloth.component - 12)
     }
     // @ToDo: Add maxTextureVariations for props (remember prop needs to refresh if drawable changes)
@@ -59,7 +61,7 @@ clothMenu.ItemSelect.on((item) => {
         new NativeUI.UIMenuListItem(
             "Drawable",
             "Set drawable",
-            new NativeUI.ItemsCollection(createNumberArray(0, maxDrawableVariations)),
+            new NativeUI.ItemsCollection(createNumberArray(minDrawableID, maxDrawableVariations)),
             0,
             { id: "drawable" }
         )
