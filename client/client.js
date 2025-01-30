@@ -2,6 +2,7 @@
 import * as alt from 'alt-client'
 import * as native from 'natives'
 import * as NativeUI from './includes/NativeUI/NativeUi.js'
+import {config} from "../config.js"
 
 let cloth = {
     component: 0,
@@ -32,6 +33,18 @@ const clothMenuItems = {
 
 const clothMenu = new NativeUI.Menu('Clothes', 'Clothes Menu', new NativeUI.Point(25, 25), 'commonmenu', 'interaction_bgd')
 const componentMenu = new NativeUI.Menu(capitalizeFirstLetter(clothMenuItems[cloth.component]), `${capitalizeFirstLetter(clothMenuItems[cloth.component])} Menu`, new NativeUI.Point(25, 25), 'commonmenu', 'interaction_bgd')
+
+if(config.dlcList.length > 1){
+    clothMenu.AddItem(
+        new NativeUI.UIMenuListItem(
+            'DLC',
+            'Select DLC',
+            new NativeUI.ItemsCollection(config.dlcList),
+            0,
+            { id: 'dlc' }
+        )
+    )
+}
 
 for (const [key, value] of Object.entries(clothMenuItems)) {
     const uiItem = new NativeUI.UIMenuItem(capitalizeFirstLetter(value), `Change ${capitalizeFirstLetter(value)}`, { id: value, componentID: key })
@@ -80,6 +93,14 @@ clothMenu.ItemSelect.on((item) => {
     componentMenu.AddItem(new NativeUI.UIMenuItem('Apply', 'Apply Cloth', { id: 'apply' }))
 })
 
+clothMenu.ListChange.on((item) => {
+    if(!item.Data.id || item.Data.id !== 'dlc') return
+    cloth['dlc'] = item.SelectedItem.DisplayText
+    if(item.SelectedItem.DisplayText === 'baseGame'){
+        cloth['dlc'] = ''
+    }
+})
+
 componentMenu.ListChange.on((item, index) => {
     if(!item.Data.id) return
     cloth[item.Data.id] = index
@@ -88,7 +109,16 @@ componentMenu.ListChange.on((item, index) => {
 componentMenu.ItemSelect.on((item) => {
     if(!item.Data || !item.Data.id) return
     if(cloth.component >= 12){
+        if(cloth['dlc'] !== ''){
+            alt.emitServer('setDlcProp', cloth.dlc, cloth.component, cloth.drawable, cloth.texture)
+            return
+        }
         alt.emitServer('setProp', cloth.component-12, cloth.drawable, cloth.texture)
+        return
+    }
+    if(cloth['dlc'] !== ''){
+        alt.emitServer('setDlcCloth', cloth.dlc, cloth.component, cloth.drawable, cloth.texture)
+        return
     }
     alt.emitServer('setCloth', cloth.component, cloth.drawable, cloth.texture)
 })

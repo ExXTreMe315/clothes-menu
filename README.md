@@ -16,6 +16,61 @@ Currently, this menu supports only BaseGame cloth.
 ## Usage
 - The default key is "K" and can be changed in the client.js at the bottom.
 
+## Add DLC Clothes
+1. First of all you need a AltV resource of your cloth pack
+2. Start the clothes pack in a resource
+3. Add your DLC name to the `config.js` in the `dlcList` Array like this. 
+```js
+export const config = {
+   dlcList: [
+      'baseGame',
+      'eup'
+   ]
+}
+```
+**IMPORTANT**
+- keep `baseGame` in the Array, otherwise you cant switch back to them.
+- add the dlc name without the `mp_m_`/`mp_f_` prefix
+
+## Get your DLC name
+If you don't know your DLC name you can take a look in your `.meta` files of the clothes pack at `<dlcName>`.
+
+Like in my Meta it's `mp_m_eup` and `mp_f_eup` so the `eup` is the name you need to add to the `config.js`
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ShopPedApparel>
+	<pedName>mp_m_freemode_01</pedName>
+	<dlcName>mp_m_eup</dlcName>
+	<fullDlcName>mp_m_freemode_01_mp_m_eup</fullDlcName>
+	<eCharacter>SCR_CHAR_MULTIPLAYER</eCharacter>
+	<creatureMetaData>MP_CreatureMetadata_eup</creatureMetaData>
+	<pedOutfits>
+	</pedOutfits>
+	<pedComponents>
+	</pedComponents>
+	<pedProps>
+	</pedProps>
+</ShopPedApparel>
+```
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<ShopPedApparel>
+	<pedName>mp_f_freemode_01</pedName>
+	<dlcName>mp_f_eup</dlcName>
+	<fullDlcName>mp_f_freemode_01_mp_f_eup</fullDlcName>
+	<eCharacter>SCR_CHAR_MULTIPLAYER_F</eCharacter>
+	<creatureMetaData>MP_CreatureMetadata_eup</creatureMetaData>
+	<pedOutfits>
+	</pedOutfits>
+	<pedComponents>
+	</pedComponents>
+	<pedProps>
+	</pedProps>
+</ShopPedApparel>
+```
+
 ## Contact
 - [Discord](https://discordapp.com/users/396472444388376577)
 - [E-Mail](mailto:exxtreme@richman-gaming.de?subject=AltV%20Cloth%20a%20Menu)
