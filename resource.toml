@@ -1,6 +1,6 @@
 type = 'js'
 
-client-files = [ 'client/*' ]
+client-files = [ 'client/*', 'config.js' ]
 client-main = 'client/client.js'
 
 server-files = [ 'server/*' ]
