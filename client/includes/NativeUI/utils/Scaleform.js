@@ -10,7 +10,7 @@ export default class Scaleform {
         return this._handle;
     }
     get isValid() {
-        return this._handle != 0;
+        return this._handle !== 0;
     }
     get isLoaded() {
         return game.hasScaleformMovieLoaded(this._handle);
@@ -29,6 +29,7 @@ export default class Scaleform {
                         else {
                             game.scaleformMovieMethodAddParamInt(arg);
                         }
+                        break
                     }
                 case "string":
                     {
