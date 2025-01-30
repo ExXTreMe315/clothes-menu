@@ -1,37 +1,37 @@
-/// <reference types="@altv/types-client" />
-import * as alt from 'alt-client';
-import * as native from "natives";
-import * as NativeUI from './includes/NativeUI/NativeUi.js';
+/// <reference types='@altv/types-client' />
+import * as alt from 'alt-client'
+import * as native from 'natives'
+import * as NativeUI from './includes/NativeUI/NativeUi.js'
 
 let cloth = {
     component: 0,
     drawable: 0,
     texture: 0,
-    dlc: ""
+    dlc: ''
 }
 
 const clothMenuItems = {
-    0: "head",
-    1: "masks",
-    2: "hairs",
-    3: "torsos",
-    4: "legs",
-    5: "bags",
-    6: "shoes",
-    7: "accessories",
-    8: "undershirts",
-    9: "armors",
-    10: "decals",
-    11: "tops",
-    12:	"hats",
-    13:	"glasses",
-    14:	"ears",
-    15:	"watches",
-    16: "bracelets"
+    0: 'head',
+    1: 'masks',
+    2: 'hairs',
+    3: 'torsos',
+    4: 'legs',
+    5: 'bags',
+    6: 'shoes',
+    7: 'accessories',
+    8: 'undershirts',
+    9: 'armors',
+    10: 'decals',
+    11: 'tops',
+    12:	'hats',
+    13:	'glasses',
+    14:	'ears',
+    15:	'watches',
+    16: 'bracelets'
 }
 
-const clothMenu = new NativeUI.Menu("Clothes", "Clothes Menu", new NativeUI.Point(25, 25), "shopui_title_graphics_franklin", "shopui_title_graphics_franklin");
-const componentMenu = new NativeUI.Menu(capitalizeFirstLetter(clothMenuItems[cloth.component]), `${capitalizeFirstLetter(clothMenuItems[cloth.component])} Menu`, new NativeUI.Point(25, 25), "shopui_title_graphics_franklin", "shopui_title_graphics_franklin");
+const clothMenu = new NativeUI.Menu('Clothes', 'Clothes Menu', new NativeUI.Point(25, 25), 'commonmenu', 'interaction_bgd')
+const componentMenu = new NativeUI.Menu(capitalizeFirstLetter(clothMenuItems[cloth.component]), `${capitalizeFirstLetter(clothMenuItems[cloth.component])} Menu`, new NativeUI.Point(25, 25), 'commonmenu', 'interaction_bgd')
 
 for (const [key, value] of Object.entries(clothMenuItems)) {
     const uiItem = new NativeUI.UIMenuItem(capitalizeFirstLetter(value), `Change ${capitalizeFirstLetter(value)}`, { id: value, componentID: key })
@@ -59,25 +59,25 @@ clothMenu.ItemSelect.on((item) => {
 
     componentMenu.AddItem(
         new NativeUI.UIMenuListItem(
-            "Drawable",
-            "Set drawable",
+            'Drawable',
+            'Set drawable',
             new NativeUI.ItemsCollection(createNumberArray(minDrawableID, maxDrawableVariations)),
             0,
-            { id: "drawable" }
+            { id: 'drawable' }
         )
     )
 
     componentMenu.AddItem(
         new NativeUI.UIMenuListItem(
-            "Texture",
-            "Set texture",
+            'Texture',
+            'Set texture',
             new NativeUI.ItemsCollection(createNumberArray(0, maxTextureVariations)),
             0,
-            { id: "texture" }
+            { id: 'texture' }
         )
     )
 
-    componentMenu.AddItem(new NativeUI.UIMenuItem("Apply", "Apply Cloth", { id: "apply" }))
+    componentMenu.AddItem(new NativeUI.UIMenuItem('Apply', 'Apply Cloth', { id: 'apply' }))
 })
 
 componentMenu.ListChange.on((item, index) => {
@@ -104,7 +104,7 @@ function createNumberArray(min, max) {
 }
 
 function capitalizeFirstLetter(val) {
-    return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+    return String(val).charAt(0).toUpperCase() + String(val).slice(1)
 }
 
 function getMaxDrawableVariations(componentID){
